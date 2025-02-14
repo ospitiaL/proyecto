@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usuario</title>
+    <link rel="stylesheet" href="../css/userSolicitud.css">
+</head>
+<header>
+    <nav>
+        <h1>Fix&Go</h1>
+    <ul>
+        <li><a href="user.html">INICIO</a></li>
+        <li><a href="userSolicitud.html">SOLICITAR</a></li>
+        <li><a href="userHistorial.html">HISTORIAL</a></li>
+    </ul>
+    </nav>
+</header>
+<body>
+    <h2>Solicitar Servicio de Soporte Técnico</h2>
+    <form id="register">
+        <label for="">Dirección</label>
+        <input type="text" id="direccion">
+        <label for="">Barrio</label>
+        <input type="text" id="barrio">
+        <label for="opciones">Tipo de Soporte requerido:</label>
+            <select id="opciones" name="opciones">
+                <option value="opcion1">Mantenimiento Preventivo</option>
+                <option value="opcion2">Mantenimiento Correctivo</option>
+                <option value="opcion3">Instalación de Impresora</option>
+                <option value="opcion4">Cambiar Disco Duro</option>
+            </select>
+        <label for="">Comentarios</label>
+        <textarea id="comentarios" rows="5" cols="30"></textarea>
+        <input  id=boton type="button" value="Ingresar" onclick="registrarTecnico(event)">
+    </form>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solicitudes</title>
+    <link rel="stylesheet" href="../css/admRegistrar.css">
+</head>
+<header>
+    <nav>
+        <h1>Fix&Go</h1>
+    <ul>
+        <li><a href="admin.html">INICIO</a></li>
+        <li><a href="admSolicitud.html">SOLICITUDES</a></li>
+        <li><a href="admReseñas.html">RESEÑAS</a></li>
+        <li><a href="admRegistrar.html">REGISTRAR TÉCNICO</a></li>
+    </ul>
+    </nav>
+</header>
+<body>
+    <h2>Registrar Nuevo Técnico</h2>
+    <form id="register">
+        <label for="">Nombres</label>
+        <input type="text" id="nombres">
+        <label for="">Apellidos</label>
+        <input type="text" id="apellidos">
+        <label for="">No. Identidad</label>
+        <input type="text" id="identidad">
+        <label for="">Telefono</label>
+        <input type="text" id="tel">
+        <label for="">Lugar de Estudio</label>
+        <input type="text" id="lugar">
+        <input  id=boton type="button" value="Ingresar" onclick="registrarTecnico(event)">
+    </form>
+    <table id="tabla"></table>
+    <script src="../js/admRegistrar.js"></script>
+</body>
+</html>
