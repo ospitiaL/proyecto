@@ -1,48 +1,56 @@
-let scriptURL = "https://script.google.com/macros/s/AKfycbx-aBhfOHYYhMxuq4c-lTLXs2NyrsYbIYMaT9tu426I1JGyzx8L6gMMkPsonTywdgoNRg/exec"; // Reemplázalo con la URL de Google Apps Script
+const API_URL = "https://api.jsonbin.io/v3/b/67b4e758ad19ca34f808bef0";
+const API_KEY = "$2a$10$8OdcwmdEF3G7zErnorA84eTQB2V2YFtqAL1vxaU/FRwJ2OWPZ4Ydm";
 
-let login = () => {
-    let usuario = document.getElementById("usuario").value;
-    let password = document.getElementById("password").value;
+let login = async () => {
+    let usuario = document.getElementById("usuario").value.trim();
+    let password = document.getElementById("password").value.trim();
 
     if (usuario === "" || password === "") {
         alert("Por favor, completa todos los campos.");
         return;
     }
 
-    fetch(`${scriptURL}?user=${usuario}&pass=${password}`)
-        .then(response => response.json())
-        .then(data => {
-            if (data.success) {
-                alert("Bienvenido");
-
-                localStorage.setItem("usuario", usuario);
-                localStorage.setItem("rol", data.rol);
-                // Redirigir según el rol
-                switch (data.rol) {
-                    case "admin":
-                        window.location.href = "html/admin.html";
-                        break;
-                    case "tech":
-                        window.location.href = "html/tech.html";
-                        break;
-                    case "user":
-                        window.location.href = "html/user.html";
-                        break;
-                    default:
-                        alert("el rol no ha sido asignado.");
-                        break;
-                }
-            } else {
-                alert("Usuario o contraseña incorrectos");
+    try {
+        let response = await fetch(API_URL, {
+            method: "GET",
+            headers: {
+                "X-Master-Key": API_KEY
             }
-        })
-        .catch(error => console.error("Error:", error));
+        });
+
+        let data = await response.json();
+        let usuarios = data.record;  
+
+       
+        let usuarioEncontrado = usuarios.find(u => u.usuario === usuario && u.contraseña === password);
+
+        if (usuarioEncontrado) {
+            alert("Bienvenido " + usuarioEncontrado.nombre);
+
+            localStorage.setItem("usuario", usuarioEncontrado.usuario);
+            localStorage.setItem("rol", usuarioEncontrado.rol);
+            localStorage.setItem("nombre", usuarioEncontrado.nombre);
+
+            switch (usuarioEncontrado.rol) {
+                case "admin":
+                    window.location.href = "html/admin.html";
+                    break;
+                case "tech":
+                    window.location.href = "html/tech.html";
+                    break;
+                case "user":
+                    window.location.href = "html/user.html";
+                    break;
+                default:
+                    alert("El rol no ha sido asignado.");
+                    break;
+            }
+        } else {
+            alert("Usuario o contraseña incorrectos");
+        }
+
+    } catch (error) {
+        console.error("Error:", error);
+        alert("Hubo un problema con la solicitud.");
+    }
 };
-
-
-
-
-
-
-
-

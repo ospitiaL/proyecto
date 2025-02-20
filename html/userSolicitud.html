@@ -13,6 +13,8 @@
         <li><a href="user.html">INICIO</a></li>
         <li><a href="userSolicitud.html">SOLICITAR</a></li>
         <li><a href="userHistorial.html">HISTORIAL</a></li>
+        <li><a href="contactenos.html">CONTACTENOS</a></li>
+        <li><a href="#" onclick="cerrarSesion()">Cerrar Sesión</a></li>
     </ul>
     </nav>
 </header>
@@ -25,14 +27,20 @@
         <input type="text" id="barrio">
         <label for="opciones">Tipo de Soporte requerido:</label>
             <select id="opciones" name="opciones">
-                <option value="opcion1">Mantenimiento Preventivo</option>
-                <option value="opcion2">Mantenimiento Correctivo</option>
-                <option value="opcion3">Instalación de Impresora</option>
-                <option value="opcion4">Cambiar Disco Duro</option>
+                <option value="Mantenimiento Preventivo">Mantenimiento Preventivo</option>
+                <option value="Mantenimiento Correctivo">Mantenimiento Correctivo</option>
+                <option value="Instalación de Impresora">Instalación de Impresora</option>
+                <option value="Cambiar Disco Duro">Cambiar Disco Duro</option>
             </select>
         <label for="">Comentarios</label>
         <textarea id="comentarios" rows="5" cols="30"></textarea>
-        <input  id=boton type="button" value="Ingresar" onclick="registrarTecnico(event)">
+        <button type="submit" onclick="registrarTecnico(event)">Ingresar</button>
     </form>
+    <h2>Solicitudes en Espera de Aprobación</h2>
+<ul id="listaSolicitudesUsuario"></ul>
+<h2>Calificar Servicio</h2>
+<ul id="listaCalificaciones"></ul>
+    <script src="../js/verificar.js"></script>
+    <script src="../js/userSolicitud.js"></script>
 </body>
 </html>

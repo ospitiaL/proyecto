@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrador</title>
+    <link rel="stylesheet" href="../css/gestion.css">
+</head>
+<header>
+    <nav>
+        <h1>Fix&Go</h1>
+    <ul>
+        <li><a href="admin.html">INICIO</a></li>
+        <li><a href="admSolicitud.html">SOLICITUDES</a></li>
+        <li><a href="admReseñas.html">RESEÑAS</a></li>
+        <li><a href="gestion.html">GESTION</a></li>
+        <li><a href="#" onclick="cerrarSesion()">Cerrar Sesión</a></li>
+    </ul>
+    </nav>
+</header>
+<body>
+<h2>Gestión de Usuarios</h2>
+
+<form id="formAgregarUsuario">
+    <label>Usuario:</label>
+    <input type="text" id="nuevoUsuario" required>
+
+    <label>Contraseña:</label>
+    <input type="password" id="nuevaContraseña" required>
+
+    <label>Rol:</label>
+    <select id="nuevoRol">
+        <option value="admin">Admin</option>
+        <option value="tech">Técnico</option>
+        <option value="user">Usuario</option>
+    </select>
+
+    <label>Nombre:</label>
+    <input type="text" id="nuevoNombre" required>
+
+    <button type="button" onclick="agregarUsuario()">Agregar Usuario</button>
+</form>
+
+<table id="tablaUsuarios">
+    <tr>
+        <th>Usuario</th>
+        <th>Contraseña</th>
+        <th>Rol</th>
+        <th>Nombre</th>
+        <th>Acciones</th>
+    </tr>
+</table>
+<div class="pie">   
+    Fix&Go <br>
+    Correo lospitia@unibarranquilla.edu.co <br>
+    Mantenimiento de Sistemas Informáticos <br>
+    Barranquilla - Colombia 
+</div>
+<script src="../js/verificar.js"></script>
+<script src="../js/gestion.js"></script>
+</body>
+</html>

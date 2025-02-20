@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usuario</title>
+    <link rel="stylesheet" href="../css/contactenos.css">
+</head>
+<header>
+    <nav>
+        <h1>Fix&Go</h1>
+    <ul>
+        <li><a href="user.html">INICIO</a></li>
+        <li><a href="userSolicitud.html">SOLICITAR</a></li>
+        <li><a href="userHistorial.html">HISTORIAL</a></li>
+        <li><a href="contactenos.html">CONTACTENOS</a></li>
+        <li><a href="#" onclick="cerrarSesion()">Cerrar Sesión</a></li>
+    </ul>
+    </nav>
+</header>
+<body>
+    <h2>Formulario de Contacto</h2>
+    <form id="formContactenos">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" required>
+    
+        <label for="correo">Correo:</label>
+        <input type="email" id="correo" required>
+    
+        <label for="asunto">Asunto:</label>
+        <input type="text" id="asunto" required>
+    
+        <label for="mensaje">Mensaje:</label>
+        <textarea id="mensaje" required></textarea>
+    
+        <button type="submit">Enviar</button>
+    </form>
+<script src="../js/verificar.js"></script>
+<script src="../js/contactenos.js"></script>
+</body>
+</html>

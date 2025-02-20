@@ -4,24 +4,6 @@
     padding-right: 7px;
 }
 
-table {
-    width: 50%;
-    border-collapse: collapse;
-    margin: auto;
-    margin-top: 10px;
-}
-
-th, td {
-    border: 1px solid black; 
-    padding: 4px;
-    text-align: left;
-}
-
-th {
-    background-color: #000A65;
-    color: white;
-}
-
 nav{
     display: flex;
     align-items: center;
@@ -45,11 +27,6 @@ a:hover{
 header{
     background-color:#000321;
 }
-
-header h1{
-    color: white;
-}
-
 form {
     display: flex;
     flex-direction: column;
@@ -83,7 +60,6 @@ form textarea {
     min-height: 100px;
 }
 
-
 form button {
     margin-top: 15px;
     padding: 10px;
@@ -98,11 +74,16 @@ form button {
 form button:hover {
     background: #000A65;
 }
+.pie { 
+    margin-top: 30%;
+    text-align: center;  
+    background-color: #000321;
+    color: white;
+} 
 
+header h1{
+    color: white;
+}
 body h2{
     text-align: center;
 }
-
-
-
-

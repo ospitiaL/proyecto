@@ -4,24 +4,6 @@
     padding-right: 7px;
 }
 
-table {
-    width: 50%;
-    border-collapse: collapse;
-    margin: auto;
-    margin-top: 10px;
-}
-
-th, td {
-    border: 1px solid black; 
-    padding: 4px;
-    text-align: left;
-}
-
-th {
-    background-color: #000A65;
-    color: white;
-}
-
 nav{
     display: flex;
     align-items: center;
@@ -46,14 +28,49 @@ header{
     background-color:#000321;
 }
 
+body h3{
+    text-align: center;
+}
+
+.map{
+    display: flex;
+    
+    justify-content: center;
+}
+
+.pie { 
+    margin-top: auto;
+    text-align: center;  
+    background-color: #000321;
+    color: white;
+} 
+
 header h1{
+    color: white;
+}
+
+table {
+    width: 50%;
+    border-collapse: collapse;
+    margin: auto;
+    margin-top: 10px;
+}
+
+th, td {
+    border: 1px solid black; 
+    padding: 4px;
+    text-align: left;
+}
+
+th {
+    background-color: #000A65;
     color: white;
 }
 
 form {
     display: flex;
     flex-direction: column;
-    width: 50%; 
+    width: 25%; 
     margin: auto; 
     padding: 20px;
     background: #f4f4f4;
@@ -102,7 +119,3 @@ form button:hover {
 body h2{
     text-align: center;
 }
-
-
-
-

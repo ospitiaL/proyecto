@@ -38,12 +38,13 @@ body h3{
     justify-content: center;
 }
 
+
 .pie { 
+    margin-top: auto;
     text-align: center;  
     background-color: #000321;
     color: white;
 } 
-
 header h1{
     color: white;
 }
